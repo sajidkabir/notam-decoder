@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "notam-decoder"
+version = "0.1.0"
+description = "Decode ICAO NOTAMs (Notices to Airmen) into structured data and plain English"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sajid Kabir Saji" }]
+requires-python = ">=3.10"
+keywords = ["notam", "aviation", "icao", "decoder", "parser", "flight-planning"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.urls]
+Homepage = "https://github.com/sajidkabir/notam-decoder"
+Repository = "https://github.com/sajidkabir/notam-decoder"
+Issues = "https://github.com/sajidkabir/notam-decoder/issues"
+Changelog = "https://github.com/sajidkabir/notam-decoder/blob/main/CHANGELOG.md"
+
+[project.scripts]
+notam-decode = "notam_decoder.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/notam_decoder"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
